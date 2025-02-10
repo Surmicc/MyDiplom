@@ -82,10 +82,11 @@ def callback_worker(call):
 
 
     # Начало игры и возврат к нему
+    # Обработка выбора для каждого кадра
     if current_kadr == "kadr1":
         if choice == 0:
             bot.send_message(chat_id, "Человек умер.\n\nХорошо, что это только проверка твоих знаний, давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
-            user_data[chat_id] = {"current_kadr": "kadr1", "last_message_id": message.message_id}
+            user_data[chat_id]["current_kadr"] = "kadr1" #Возврат на кадр 1
         elif choice == 1:
             user_data[chat_id]["current_kadr"] = "kadr2_1"  # обновляем текущий кадр
             bot.send_message(chat_id, "Вы кричите - «На помощь, помогите кто-нибудь»; Подходит прохожий и спрашивает «Что случилось?» - Идете с прохожим к женщине", reply_markup=create_keyboard(kadr2_1_options, chat_id))  # переход на 2_1
@@ -96,8 +97,7 @@ def callback_worker(call):
             message = "Вы набирает 112 на телефон – Отвечает диспетчер, вы - называете место происшествия (галерея?), пол и возраст пострадавшей (женщина, примерно 70 лет), что случилось (упала, обездвижена). Ответ диспетчера – к вам выехали."
             bot.send_message(chat_id, "Игра окончена!\n\nЕсли вы хотите увидеть другой результат или проверить свои знания то сыграйте ещё раз /game")  # Сообщение об окончании игры.
             
-            
-    # Кадр переходящий от choice == 1.
+     # Кадр переходящий от choice == 1.
     elif current_kadr == "kadr2_1":
         if choice == 0:
             bot.send_message(chat_id, "Человек умер.\n\nХорошо, что это только проверка твоих знаний, давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
@@ -110,6 +110,7 @@ def callback_worker(call):
             bot.send_message(chat_id, "Игра окончена!\n\nЕсли вы хотите увидеть другой результат или проверить свои знания то сыграйте ещё раз /game")  # Сообщение об окончании игры.
         
 
+    # Обработка выбора для каждого кадра
     # Кадр переходящий от choice == 1
     elif current_kadr == "kadr4":
         if choice == 0:
@@ -121,7 +122,7 @@ def callback_worker(call):
         elif choice == 2:
             message = "Вы набираете 112 на телефон – Отвечает диспетчер, вы - называете место происшествия (галерея?), пол и возраст пострадавшей (женщина, примерно 70 лет), что случилось (упала, обездвижена). Ответ диспетчера – к вам выехали."
             bot.send_message(chat_id, "Игра окончена!\n\nЕсли вы хотите увидеть другой результат или проверить свои знания то сыграйте ещё раз /game")  # Сообщение об окончании игры.
-                            
+    
     # Кадр переходящий от choice == 1
     elif current_kadr == "kadr6":
         if choice == 0:
@@ -151,7 +152,8 @@ def callback_worker(call):
         elif choice == 3:
             bot.send_message(chat_id, "Человек умер.\nНеплохое решение, но лучше было бы продолжить делать СЛР! Давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
             user_data[chat_id]["current_kadr"] = "kadr1" #Возврат на кадр 1
-            
+            bot.send_message(chat_id, message, reply_markup=create_keyboard(kadr1_options, chat_id))
+
             
     elif current_kadr == "kadr8":
         if choice == 0:
