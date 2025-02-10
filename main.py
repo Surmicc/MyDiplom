@@ -87,12 +87,14 @@ def callback_worker(call):
         if choice == 0:
             bot.send_message(chat_id, "Человек умер.\n\nХорошо, что это только проверка твоих знаний, давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
             user_data[chat_id]["current_kadr"] = "kadr1" #Возврат на кадр 1
+            bot.send_message(chat_id, message, reply_markup=create_keyboard(kadr1_options, chat_id))
         elif choice == 1:
             user_data[chat_id]["current_kadr"] = "kadr2_1"  # обновляем текущий кадр
             bot.send_message(chat_id, "Вы кричите - «На помощь, помогите кто-нибудь»; Подходит прохожий и спрашивает «Что случилось?» - Идете с прохожим к женщине", reply_markup=create_keyboard(kadr2_1_options, chat_id))  # переход на 2_1
         elif choice == 2:
             bot.send_message(chat_id, "Человек умер.\n\nХорошо, что это только проверка твоих знаний, давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
             user_data[chat_id]["current_kadr"] = "kadr1" #Возврат на кадр 1
+            bot.send_message(chat_id, message, reply_markup=create_keyboard(kadr1_options, chat_id))
         elif choice == 3:
             message = "Вы набирает 112 на телефон – Отвечает диспетчер, вы - называете место происшествия (галерея?), пол и возраст пострадавшей (женщина, примерно 70 лет), что случилось (упала, обездвижена). Ответ диспетчера – к вам выехали."
             bot.send_message(chat_id, "Игра окончена!\n\nЕсли вы хотите увидеть другой результат или проверить свои знания то сыграйте ещё раз /game")  # Сообщение об окончании игры.
@@ -116,6 +118,8 @@ def callback_worker(call):
         if choice == 0:
             bot.send_message(chat_id, "Человек умер.\n\nХорошо, что это только проверка твоих знаний, давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
             user_data[chat_id]["current_kadr"] = "kadr1" #Возврат на кадр 1
+            bot.send_message(chat_id, message, reply_markup=create_keyboard(kadr1_options, chat_id))
+
         elif choice == 1:
             user_data[chat_id]["current_kadr"] = "kadr6"  # обновляем текущий кадр
             bot.send_message(chat_id, "Демонстрация (вид сбоку) – выдвижение нижней челюсти, 10-сек оценка дыхания и пульса на магистральных артериях (сонные). В это время помощник вызывает СМП и называет место происшествия (галерея?) пол и возраст пострадавшей (женщина, примерно 70 лет), что случилось (упала, обездвижена). Ответ диспетчера – к вам выехали.", reply_markup=create_keyboard(kadr6_options, chat_id)) # переход на кадр 6
@@ -128,6 +132,7 @@ def callback_worker(call):
         if choice == 0:
             bot.send_message(chat_id, "Человек умер.\n\nХорошо, что это только проверка твоих знаний, давай ещё раз!\n\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=create_keyboard(kadr1_options, chat_id))
             user_data[chat_id]["current_kadr"] = "kadr1" #Возврат на кадр 1
+            bot.send_message(chat_id, message, reply_markup=create_keyboard(kadr1_options, chat_id))
         elif choice == 1:
             user_data[chat_id]["current_kadr"] = "kadr7"  # обновляем текущий кадр
             bot.send_message(chat_id, "Демонстрация СЛР – 30/2, вид сбоку + бегущая линия с точками для попадания в ритм СЛР (мб музыкальное сопровождение) – запомнить количество попаданий в ритм. В это время помощник осуществляет 2 вдоха", reply_markup=create_keyboard(kadr7_options, chat_id)) # переход на кадр 7
