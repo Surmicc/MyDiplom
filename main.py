@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('7026051506:AAFdGiybYZOAuQX3FEhlB5k5cTPsp9ogXEg')
+bot = telebot.TeleBot ('')
 
 user_data = {}  # словарь для хранения состояния игры
 
