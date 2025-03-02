@@ -32,6 +32,12 @@ def create_keyboard(options, chat_id):
 @bot.callback_query_handler(func=lambda call: True)
 def handle_query(call):
     chat_id = call.message.chat.id 
+    
+    if chat_id in messages:
+        try:
+            bot.delete_message(chat_id,messages[chat_id]) # Удаляем предыдущее сообщение
+        except Exception as e:
+            print(f"Ошибка при удалении сообщения: {e}")
 
 
 
