@@ -4,6 +4,7 @@ from telebot import types
 bot = telebot.TeleBot ('')
 
 user_data = {}  # словарь для хранения состояния игры
+messages = {} # словарь для хранения индефикатора сообщений 
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
