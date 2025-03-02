@@ -15,7 +15,11 @@ def start_game(message):
     chat_id = message.chat.id
     user_data[chat_id] = {"current_kadr": "kadr1"}
     markup = create_keyboard(kadr1_options, chat_id)
-    bot.send_message(chat_id, "Начнем игру!\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=markup)
+    
+        # Отправляем сообщение и сохраняем его идентификатор
+    msg = bot.send_message(chat_id, "Начнем игру!\nПри посещении галереи Вы заметили, как упала женщина примерно 65-70 лет.", reply_markup=markup)
+    message[chat_id]= msg.id  # Сохраняем идентификатор сообщения
+
 
 def create_keyboard(options, chat_id):
     markup = types.InlineKeyboardMarkup()
