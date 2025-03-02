@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot ('')
+bot = telebot.TeleBot ('7026051506:AAFdGiybYZOAuQX3FEhlB5k5cTPsp9ogXEg')
 
 user_data = {}  # словарь для хранения состояния игры
 messages = {} # словарь для хранения индефикатора сообщений 
@@ -184,4 +184,4 @@ def callback_worker(call):
             bot.send_message(chat_id, "Игра окончена!")  # Сообщение об окончании игры.
 
 
-bot.polling()
+bot.polling(none_stop=True)
