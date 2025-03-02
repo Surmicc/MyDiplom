@@ -1,7 +1,8 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('7026051506:AAFdGiybYZOAuQX3FEhlB5k5cTPsp9ogXEg')  # Укажите ваш токен
+bot = telebot.TeleBot ('')
+
 
 # Словари для хранения состояния игры и сообщений
 user_data = {}  # Сохраняем текущий кадр для каждого пользователя
