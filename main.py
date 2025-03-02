@@ -29,6 +29,11 @@ def create_keyboard(options, chat_id):
         markup.add(types.InlineKeyboardButton(text=option, callback_data=f"{user_data[chat_id]['current_kadr']}:{i}"))
     return markup
 
+@bot.callback_query_handler(func=lambda call: True)
+def handle_query(call):
+    chat_id = call.message.chat.id 
+
+
 
 kadr1_options = [
     "1)Уйти в другую сторону", #конец игры, предложить сыграть ещё раз.
